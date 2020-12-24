@@ -8,8 +8,10 @@ def calculate():
     try:
         a = int(request.args.get('a'))
         b = int(request.args.get('b'))
+        print("Inside cal class")
         return str(a+b)
     except ValueError:
         return "Please enter numeric values only"
 if __name__  == "__main__":
+    app.config['DEBUG'] = True
     app.run(app.run(host='0.0.0.0', port=8080))   
